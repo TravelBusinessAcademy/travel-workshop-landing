@@ -547,7 +547,7 @@
           <label>Email Address <span class="req">*</span></label>
           <input type="email" name="email" id="email" placeholder="you@example.com" required>
         </div>
-        <input type="hidden" name="sponsor_id" id="sponsorId" value="">
+        <input type="hidden" name="sponsor_code" id="sponsorId" value="">
         <input type="hidden" name="utmcampaign" value="">
         <button type="submit" class="submit-btn" id="submitBtn">
           Get Access To The Travel Biz Workshop Now
@@ -614,7 +614,7 @@
 
       var params = 'email_address=' + encodeURIComponent(emailAddr) +
                    '&contact[first_name]=' + encodeURIComponent(firstName) +
-                   '&contact[sponsor_id]=' + encodeURIComponent(sponsorId) +
+                   '&contact[sponsor_code]=' + encodeURIComponent(sponsorId) +
                    '&referrer=' + encodeURIComponent(window.location.href);
       xhr.send(params);
     });
