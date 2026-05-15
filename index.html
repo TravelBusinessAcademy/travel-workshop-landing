@@ -548,6 +548,7 @@
           <input type="email" name="email" id="email" placeholder="you@example.com" required>
         </div>
         <div class="form-group">
+          <div id="sponsorHint" style="font-size:13px; color:#3b82f6; margin-bottom:6px; font-weight:500;"></div>
           <label>Sponsor ID Code <span class="req">*</span></label>
           <input type="text" name="sponsor_code" id="sponsorId" placeholder="Enter your sponsor ID code" required>
         </div>
@@ -622,13 +623,18 @@
       xhr.send(params);
     });
 
-    // Auto-detect sponsor code from URL — checks ?sponsor, ?code, ?ref, ?sponsorid
+    // Auto-detect sponsor code from URL — fills hint + pre-populates field
     (function() {
       var params = new URLSearchParams(window.location.search);
       var sponsor = params.get('sponsor') || params.get('code') || params.get('ref') || params.get('sponsorid') || '';
+      var hintEl = document.getElementById('sponsorHint');
+      var fieldEl = document.getElementById('sponsorId');
       if (sponsor) {
-        var sponsorField = document.getElementById('sponsorId');
-        if (sponsorField) sponsorField.value = sponsor;
+        if (hintEl) hintEl.textContent = 'Your sponsor\'s code is: ' + sponsor;
+        if (fieldEl) fieldEl.value = sponsor;
+      } else {
+        if (hintEl) hintEl.textContent = 'Get your sponsor\'s unique code when someone refers you.';
+        if (fieldEl) fieldEl.setAttribute('placeholder', 'Enter your sponsor ID code');
       }
     })();
 
