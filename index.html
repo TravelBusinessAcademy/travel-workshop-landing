@@ -547,10 +547,7 @@
           <label>Email Address <span class="req">*</span></label>
           <input type="email" name="email" id="email" placeholder="you@example.com" required>
         </div>
-        <div class="form-group">
-          <label>Sponsor ID <span class="req">*</span></label>
-          <input type="text" name="sponsor_id" id="sponsorId" placeholder="Enter your sponsor ID code" required>
-        </div>
+        <input type="hidden" name="sponsor_id" id="sponsorId" value="">
         <input type="hidden" name="utmcampaign" value="">
         <button type="submit" class="submit-btn" id="submitBtn">
           Get Access To The Travel Biz Workshop Now
@@ -621,6 +618,16 @@
                    '&referrer=' + encodeURIComponent(window.location.href);
       xhr.send(params);
     });
+
+    // Auto-detect sponsor code from URL — checks ?sponsor, ?code, ?ref, ?sponsorid
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var sponsor = params.get('sponsor') || params.get('code') || params.get('ref') || params.get('sponsorid') || '';
+      if (sponsor) {
+        var sponsorField = document.getElementById('sponsorId');
+        if (sponsorField) sponsorField.value = sponsor;
+      }
+    })();
 
     // Auto-detect utm_campaign from URL
     (function() {
