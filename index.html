@@ -550,7 +550,7 @@
         <div class="form-group">
           <div id="sponsorHint" style="font-size:13px; color:#3b82f6; margin-bottom:6px; font-weight:500;"></div>
           <label>Sponsor ID Code <span class="req">*</span></label>
-          <input type="text" name="sponsor_code" id="sponsorId" placeholder="Enter your sponsor ID code" required>
+          <input type="text" name="custom_fields[sponsor_code]" id="sponsorId" placeholder="Enter your sponsor ID code" required>
         </div>
         <input type="hidden" name="utmcampaign" value="">
         <button type="submit" class="submit-btn" id="submitBtn">
@@ -618,7 +618,7 @@
 
       var params = 'email_address=' + encodeURIComponent(emailAddr) +
                    '&contact[first_name]=' + encodeURIComponent(firstName) +
-                   '&contact[sponsor_code]=' + encodeURIComponent(sponsorId) +
+                   '&custom_fields[sponsor_code]=' + encodeURIComponent(sponsorId) +
                    '&referrer=' + encodeURIComponent(window.location.href);
       xhr.send(params);
     });
