@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Start Your Travel Business — Free Workshop | Synergy Powerhouse</title>
+  <title>Start Your Travel Business — Free Workshop | Team Synergy PowerHouse</title>
   <meta name="description" content="Join thousands of aspiring entrepreneurs. Free on-demand workshop to start your travel business from home. No experience needed.">
   <meta property="og:title" content="Start Your Travel Business From Home — Free Workshop">
   <meta property="og:description" content="Watch, learn, and launch your travel business today. Free on-demand workshop.">
@@ -25,8 +25,9 @@
     }
 
     /* ─── NAVIGATION ─── */
+    /* position: sticky instead of fixed — prevents stretching outside iframe in Mailmunch builder */
     .nav {
-      position: fixed;
+      position: sticky;
       top: 0; left: 0; right: 0;
       z-index: 1000;
       display: flex;
@@ -92,7 +93,7 @@
       .nav-links a { font-size: 16px; padding: 8px 0; }
     }
 
-    /* ─── HERO ─── */
+    /* ── HERO ─── */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -105,12 +106,13 @@
     .hero-bg {
       position: absolute;
       inset: 0;
+      /* Woman walking on tropical beach — people in background */
       background:
         linear-gradient(180deg,
           rgba(10, 25, 47, 0.35) 0%,
           rgba(10, 25, 47, 0.15) 40%,
           rgba(10, 25, 47, 0.50) 100%),
-        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80')
+        url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1600&q=80')
         center / cover no-repeat;
       z-index: 0;
     }
@@ -209,10 +211,10 @@
       padding: 60px 24px;
       font-size: clamp(18px, 3vw, 24px);
       font-weight: 500;
-      /* Travel / water scene background */
+      /* People enjoying tropical resort / pool */
       background:
         linear-gradient(135deg, rgba(6, 95, 70, 0.82) 0%, rgba(6, 118, 138, 0.75) 50%, rgba(59, 130, 246, 0.68) 100%),
-        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1400&q=80')
+        url('https://images.unsplash.com/photo-1596436889106-be35e843f974?w=1400&q=80')
         center / cover no-repeat;
     }
     .proof-bar strong { color: #a5f3fc; font-weight: 700; }
@@ -252,7 +254,7 @@
     }
     .section-header { text-align: center; margin-bottom: 48px; }
 
-    /* ─── 2 EASY STEPS (TEXT ONLY) ─── */
+    /* ─── 3 EASY STEPS (TEXT ONLY) ─── */
     .steps-list {
       max-width: 560px;
       margin: 0 auto;
@@ -339,7 +341,11 @@
 
     /* ─── CTA / FORM SECTION ─── */
     .cta-section {
-      background: linear-gradient(180deg, #0f172a 0%, #1e3a5f 100%);
+      /* People at beach / boat */
+      background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 58, 95, 0.88) 100%),
+        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1400&q=80')
+        center / cover no-repeat;
       padding: 80px 24px;
       text-align: center;
       position: relative;
@@ -378,7 +384,8 @@
     }
     .form-group label .req { color: #e11d48; }
     .form-group input[type="text"],
-    .form-group input[type="email"] {
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
       width: 100%;
       padding: 14px 16px;
       font-size: 15px;
@@ -464,6 +471,7 @@
       .cta-section { padding: 60px 16px; }
       .proof-bar { padding: 44px 20px; }
       .step-item { padding: 22px 20px; flex-direction: column; align-items: center; text-align: center; }
+      .features { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -471,7 +479,7 @@
 
   <!-- NAVIGATION -->
   <nav class="nav" id="navBar">
-    <a href="#" class="nav-logo">Synergy<span>Powerhouse</span></a>
+    <a href="#" class="nav-logo">Team Synergy <span>PowerHouse</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
@@ -493,17 +501,17 @@
     <div class="hero-scroll">Scroll</div>
   </section>
 
-  <!-- SOCIAL PROOF — with travel / water scene background -->
+  <!-- SOCIAL PROOF ── with people / tropical scene background -->
   <div class="proof-bar">
     <strong>THOUSANDS</strong> of aspiring entrepreneurs have already watched this workshop to launch their travel business.
   </div>
 
-  <!-- 2 EASY STEPS (TEXT ONLY) -->
+  <!-- 3 EASY STEPS (TEXT ONLY) ── -->
   <section class="section section-mid" id="steps">
     <div class="section-inner">
       <div class="section-header">
         <div class="section-label">Getting Started</div>
-        <h2 class="section-title">Two Simple Steps to Get Started</h2>
+        <h2 class="section-title">Three Simple Steps to Get Started</h2>
         <p class="section-sub">No experience needed. Just enter your details and watch.</p>
       </div>
       <div class="steps-list">
@@ -521,6 +529,13 @@
             <p>Be sure to use your best email so you receive instant access to the workshop.</p>
           </div>
         </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-text">
+            <h3>Enter Your Sponsor's Username</h3>
+            <p>You must enter your sponsor's unique username to gain access. Get this code from the person who referred you.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -533,29 +548,29 @@
     </div>
     <div class="features">
       <div class="feature">
-        <div class="feature-icon">🏠</div>
+        <div class="feature-icon">&#127968;</div>
         <h3>Work From Anywhere</h3>
-        <p>Build your business on your schedule — from your kitchen, a café, or a beach.</p>
+        <p>Build your business on your schedule — from your kitchen, a cafe, or a beach.</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">📚</div>
+        <div class="feature-icon">&#128218;</div>
         <h3>No Experience Needed</h3>
         <p>Our step-by-step training is designed for complete beginners with no travel industry background.</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">✈️</div>
+        <div class="feature-icon">&#9992;</div>
         <h3>Travel Perks Included</h3>
         <p>Gain access to exclusive deals, fam trips, and the ability to travel while you earn.</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">💰</div>
+        <div class="feature-icon">&#128176;</div>
         <h3>Unlimited Income</h3>
         <p>Your earning potential grows with your network — there's no ceiling on what you can achieve.</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA / FORM -->
+  <!-- CTA / FORM ── -->
   <section class="cta-section" id="register">
     <div class="section-header">
       <div class="section-label">Get Access Now</div>
@@ -575,8 +590,8 @@
         </div>
         <div class="form-group">
           <div id="sponsorHint" style="font-size:13px; color:#3b82f6; margin-bottom:6px; font-weight:500;"></div>
-          <label>Sponsor ID Code <span class="req">*</span></label>
-          <input type="text" name="contact[sponsor_code]" id="sponsorId" placeholder="Enter your sponsor ID code" required>
+          <label>Sponsor Username <span class="req">*</span></label>
+          <input type="text" name="contact[sponsor_code]" id="sponsorId" placeholder="Enter your sponsor's username" required>
         </div>
         <input type="hidden" name="utmcampaign" value="">
         <button type="submit" class="submit-btn" id="submitBtn">
@@ -591,12 +606,12 @@
 
   <!-- SPAM NOTICE -->
   <div class="spam-notice">
-    <p>📬 Can't find our email? Check your Spam and Promotions folders to make sure you get your workshop link.</p>
+    <p>&#128236; Can't find our email? Check your Spam and Promotions folders to make sure you get your workshop link.</p>
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
-    &copy; 2025 Synergy Powerhouse &middot; Travel Business Academy
+    &copy; 2025 Team Synergy PowerHouse &middot; Travel Business Academy
   </div>
 
   <!-- ─── FORM SUBMISSION ─── -->
@@ -656,11 +671,11 @@
       var hintEl = document.getElementById('sponsorHint');
       var fieldEl = document.getElementById('sponsorId');
       if (sponsor) {
-        if (hintEl) hintEl.textContent = 'Your sponsor\'s code is: ' + sponsor;
+        if (hintEl) hintEl.textContent = 'Your sponsor\'s username is: ' + sponsor;
         if (fieldEl) fieldEl.value = sponsor;
       } else {
-        if (hintEl) hintEl.textContent = 'Get your sponsor\'s unique code when someone refers you.';
-        if (fieldEl) fieldEl.setAttribute('placeholder', 'Enter your sponsor ID code');
+        if (hintEl) hintEl.textContent = 'Get your sponsor\'s unique username when someone refers you.';
+        if (fieldEl) fieldEl.setAttribute('placeholder', 'Enter your sponsor\'s username');
       }
     })();
 
