@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You're In! — Synergy Powerhouse</title>
+  <title>You're In! — Team Synergy PowerHouse</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -23,6 +23,9 @@
       padding: 20px 40px;
       border-bottom: 1px solid #f1f5f9;
       background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .brand {
       font-family: 'Playfair Display', serif;
@@ -32,6 +35,14 @@
       text-decoration: none;
     }
     .brand span { color: #06b6d4; }
+
+    .team-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .team-name span { color: #06b6d4; }
 
     /* ─── MAIN CONTENT ─── */
     .main {
@@ -55,13 +66,13 @@
       border-radius: 20px;
       background: linear-gradient(135deg, #06b6d4 0%, #0284c7 50%, #1e40af 100%);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: rgba(255,255,255,0.2);
-      font-size: 64px;
       position: relative;
       overflow: hidden;
       box-shadow: 0 20px 60px rgba(6, 182, 212, 0.25);
+      padding: 40px;
     }
     /* Decorative circles to make it look premium */
     .graphic-box::before {
@@ -80,76 +91,55 @@
       background: rgba(255,255,255,0.08);
       bottom: -80px; left: -80px;
     }
-    .graphic-box i {
+    .graphic-box-content {
       position: relative;
       z-index: 1;
+      text-align: center;
+    }
+    .graphic-box-content .globe {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .graphic-box-content .quote {
+      color: #ffffff;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(16px, 2.5vw, 22px);
+      line-height: 1.6;
+      max-width: 560px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
-    /* TIMER SECTION */
-    .timer-label {
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 24px;
-    }
-    .timer {
-      display: flex;
-      gap: 24px;
-      margin-bottom: 32px;
-    }
-    .timer-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .timer-value {
-      font-size: clamp(48px, 8vw, 72px);
+    /* CHECK YOUR EMAIL */
+    .check-email {
+      font-size: clamp(28px, 5vw, 44px);
       font-weight: 700;
-      line-height: 1;
-      color: #0f172a;
-    }
-    .timer-key {
-      font-size: 13px;
-      color: #94a3b8;
-      font-weight: 500;
-      margin-top: 8px;
-    }
-    .timer-sep {
-      font-size: clamp(48px, 8vw, 72px);
-      line-height: 1;
-      color: #cbd5e1;
-      font-weight: 100;
+      color: #06b6d4;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-family: 'DM Sans', sans-serif;
     }
 
     /* TEXT SECTION */
     .headline {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(32px, 5vw, 48px);
+      font-size: clamp(40px, 6vw, 60px);
       font-weight: 700;
       color: #0f172a;
       margin-bottom: 16px;
     }
     .headline span { color: #06b6d4; font-style: italic; }
 
-    .subtext {
-      font-size: 17px;
-      color: #64748b;
-      line-height: 1.7;
-      max-width: 540px;
-      margin: 0 auto 24px;
-    }
-
     .highlight-text {
-      font-size: 15px;
-      font-weight: 600;
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 700;
       color: #ea580c;
-      background: rgba(234, 88, 12, 0.08);
-      padding: 8px 16px;
+      background: rgba(234, 88, 12, 0.1);
+      padding: 14px 28px;
       border-radius: 50px;
       display: inline-block;
-      margin-bottom: 40px;
+      line-height: 1.4;
     }
 
     /* FOOTER */
@@ -164,10 +154,9 @@
 
     /* MOBILE */
     @media (max-width: 640px) {
-      .header { padding: 16px 20px; }
-      .timer { gap: 12px; }
-      .timer-sep { display: none; }
+      .header { padding: 16px 20px; flex-direction: column; gap: 8px; }
       .graphic-box { border-radius: 12px; margin-bottom: 32px; }
+      .check-email { letter-spacing: 1px; }
     }
   </style>
 </head>
@@ -178,40 +167,25 @@
     <a href="https://travelbusinessacademy.github.io/travel-workshop-landing/" class="brand">
       SYNERGY<span>POWERHOUSE</span>
     </a>
+    <div class="team-name">Team Synergy <span>PowerHouse</span></div>
   </header>
 
   <!-- MAIN CONTENT -->
   <section class="main">
 
-    <!-- GRAPHIC (Placeholder for your globe/image) -->
+    <!-- GRAPHIC BOX with quote inside -->
     <div class="graphic-box">
-      <i>🌍</i> <!-- Replace this icon with your actual <img> tag later -->
+      <div class="graphic-box-content">
+        <div class="globe">🌍</div>
+        <p class="quote">"The world is full of magical things patiently waiting for our wits to grow sharper."</p>
+      </div>
     </div>
 
-    <!-- TIMER -->
-    <div class="timer-label">Check your inbox — Your access link arrives in:</div>
-    <div class="timer">
-      <div class="timer-block">
-        <span class="timer-value" id="hours">00</span>
-        <span class="timer-key">Hours</span>
-      </div>
-      <span class="timer-sep">:</span>
-      <div class="timer-block">
-        <span class="timer-value" id="minutes">05</span>
-        <span class="timer-key">Minutes</span>
-      </div>
-      <span class="timer-sep">:</span>
-      <div class="timer-block">
-        <span class="timer-value" id="seconds">00</span>
-        <span class="timer-key">Seconds</span>
-      </div>
-    </div>
+    <!-- CHECK YOUR EMAIL NOW -->
+    <div class="check-email">Check Your Email Now!</div>
 
     <!-- TEXT -->
     <h1 class="headline">You're <span>In!</span></h1>
-    <p class="subtext">
-      "The world is full of magical things patiently waiting for our wits to grow sharper."
-    </p>
     <div class="highlight-text">Thank You for joining Team Synergy Powerhouse.</div>
 
   </section>
@@ -220,37 +194,6 @@
   <div class="footer">
     &copy; 2025 Travel Business Academy &middot; <a href="#">Privacy Policy</a>
   </div>
-
-  <!-- COUNTDOWN SCRIPT -->
-  <script>
-    // Set the date we're counting down to (5 minutes from now for demo purposes)
-    var countDownDate = new Date().getTime() + (5 * 60 * 1000);
-
-    // Update the count down every 1 second
-    var x = setInterval(function() {
-      var now = new Date().getTime();
-      var distance = countDownDate - now;
-
-      // Time calculations
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Output the result in elements with id
-      document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-      document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-      document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-
-      // If the count down is over
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("hours").innerHTML = "00";
-        document.getElementById("minutes").innerHTML = "00";
-        document.getElementById("seconds").innerHTML = "00";
-        document.querySelector('.timer-label').textContent = "Check your email now!";
-      }
-    }, 1000);
-  </script>
 
 </body>
 </html>
