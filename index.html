@@ -126,6 +126,7 @@
     <div class="form-card">
       <form id="workshopForm" action="https://forms.mailmunch.co/form/1095856/435864/submit?resource_type=landing_page" method="POST">
         <input type="hidden" name="optin_id" value="435864">
+        <input type="hidden" name="success_url" value="https://travelbusinessacademy.github.io/travel-workshop-landing/thanks.html">
         <input type="hidden" name="contact[sponsor_username]" id="sponsorHiddenField" value="">
         <div class="form-group"><label>First Name <span class="req">*</span></label><input type="text" name="contact[first_name]" id="firstName" placeholder="Your first name" required></div>
         <div class="form-group"><label>Email Address <span class="req">*</span></label><input type="email" name="email_address" id="email" placeholder="you@example.com" required></div>
@@ -173,36 +174,6 @@
         a.addEventListener('click', function(){
           tog.classList.remove('active');
           lnk.classList.remove('open');
-        });
-      });
-    }
-
-    // Form submission with AJAX to prevent MailMunch's broken redirect
-    var form = document.getElementById('workshopForm');
-    if(form){
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        
-        // Show loading state
-        var btn = form.querySelector('button[type="submit"]');
-        var originalText = btn.textContent;
-        btn.textContent = 'Submitting...';
-        btn.disabled = true;
-        
-        // Prepare form data
-        var formData = new FormData(form);
-        
-        // Submit to MailMunch via AJAX
-        fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          mode: 'no-cors' // Prevents CORS issues with MailMunch
-        }).then(function(){
-          // Redirect to our thank you page (bypass MailMunch redirect)
-          window.location.href = 'https://travelbusinessacademy.github.io/travel-workshop-landing/thanks.html';
-        }).catch(function(){
-          // Even on error, redirect (MailMunch likely received the data)
-          window.location.href = 'https://travelbusinessacademy.github.io/travel-workshop-landing/thanks.html';
         });
       });
     }
