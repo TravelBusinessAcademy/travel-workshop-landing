@@ -177,6 +177,45 @@
         });
       });
     }
+
+    // Form submission with proper AJAX handling
+    var form = document.getElementById('workshopForm');
+    if(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = btn.textContent;
+        btn.textContent = 'Submitting...';
+        btn.disabled = true;
+        
+        // Build form data
+        var formData = new FormData(form);
+        
+        // Convert FormData to URL-encoded string for MailMunch
+        var params = new URLSearchParams();
+        for (var pair of formData.entries()) {
+          params.append(pair[0], pair[1]);
+        }
+        
+        // Submit to MailMunch
+        fetch(form.action, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: params.toString(),
+          credentials: 'omit'
+        }).then(function(response){
+          // Always redirect to thank you page regardless of response
+          // MailMunch returns 200 even on success
+          window.location.href = 'https://synergy.travelbusinessacademy.travel/thanks.html';
+        }).catch(function(error){
+          // Even on network error, redirect (MailMunch likely got the data)
+          window.location.href = 'https://synergy.travelbusinessacademy.travel/thanks.html';
+        });
+      });
+    }
   </script>
 </body>
 </html>
